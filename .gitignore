@@ -1,0 +1,9 @@
+# exclude everything by default and explicitly only add specific files
+# this is a security measure of sorts to prevent accidental commits of
+# personal data/files which should not be in a public github repo
+/*
+!/.zshrc
+!/.p10k.zsh
+!/.zsh_plugins.txt
+!/.ssh/config
+!/.vimrc
