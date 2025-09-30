@@ -13,7 +13,13 @@ autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-source "${HOME}/.antidote/antidote.zsh"
+if test -f "${HOME}/.antidote/antidote.zsh"; then
+	source "${HOME}/.antidote/antidote.zsh"
+elif test -f "/usr/share/zsh-antidote/antidote.zsh"; then
+	source "/usr/share/zsh-antidote/antidote.zsh"
+else
+	echo "ERROR: can't find antidote"
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
